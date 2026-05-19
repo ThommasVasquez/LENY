@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* Updated Palette: Coastal Wood */
+  --wood-bg: #f5f0e6; /* Keeping the light cream background for contrast */
+  --wood-text: #394d6a; /* Principal: Deep Slate Blue */
+  --wood-primary: #394d6a; /* Principal: Deep Slate Blue */
+  --wood-secondary: #e3cba3; /* Secondary: Light Wood/Sand */
+  --wood-details: #ce8a39; /* Complementary 1: Golden Amber */
+  --wood-highlight: #a44819; /* Complementary 2: Reddish Wood */
+
+  --wood-accent: var(
+    --wood-secondary
+  ); /* Mapping old variable to new secondary */
+
+  --background: var(--wood-bg);
+  --foreground: var(--wood-text);
+}
+
+.dark {
+  --wood-bg: #1a1a1a;
+  --wood-text: #e3cba3;
+  --wood-primary: #e3cba3;
+  --wood-secondary: #394d6a;
+  --wood-details: #ce8a39;
+  --wood-highlight: #a44819;
+
+  --background: var(--wood-bg);
+  --foreground: var(--wood-text);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Wood Colors */
+  --color-wood-bg: var(--wood-bg);
+  --color-wood-primary: var(--wood-primary);
+  --color-wood-secondary: var(--wood-secondary);
+  --color-wood-accent: var(--wood-accent);
+  --color-wood-text: var(--wood-text);
+  --color-wood-details: var(--wood-details);
+  --color-wood-highlight: var(--wood-highlight);
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-wood-bg/30 backdrop-blur-md border border-white/20 shadow-lg rounded-2xl;
+  }
+
+  /* Apple-style liquid glass */
+  .apple-glass {
+    @apply bg-white/80! dark:bg-black/75! border-white/20! dark:border-white/10! shadow-lg! backface-visible;
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+  }
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
