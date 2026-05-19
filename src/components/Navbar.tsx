@@ -10,10 +10,9 @@ import Image from "next/image";
 
 const NAV_LINKS = [
   { name: "Inicio", href: "#hero" },
-  { name: "Colecciones", href: "#featured" },
+  { name: "Catálogo", href: "#featured" },
   { name: "Proceso", href: "#process" },
-  { name: "Nosotros", href: "#ingredients" }, // Using ingredients/details section as "Nosotros" placeholder for now
-  { name: "Portfolio", href: "#portfolio" },
+  { name: "Nosotros", href: "#ingredients" },
 ];
 
 export default function Navbar() {
