@@ -20,9 +20,9 @@ export default function Footer() {
           <div>
             <h4 className="font-serif text-xl mb-6">Contacto</h4>
             <p className="font-sans text-white/80 text-sm leading-relaxed">
-              hello@leny.com
+              info@artesaniasleny.com
               <br />
-              +1 (555) 000-0000
+              +57 (300) 528-2464
             </p>
           </div>
 
